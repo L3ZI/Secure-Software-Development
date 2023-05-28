@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Generator and Strength Checker</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+    <section>
+    <div class="title"><h1>Password Generator</h1></div>
+    <br>
+    <div class="include">
+    <form action="/generate_password" method="post">
+        <label for="length">Password Length:</label>
+        <input type="number" id="length" name="length" min="16" max="32" placeholder="min 16 Characters"  required><br><br>
+        
+        <label for="include_uppercase">Include Uppercase Letters:</label>
+        <input type="checkbox" id="include_uppercase" name="include_uppercase" required>
+        <br>
+        <label for="include_lowercase">Include Lowercase Letters:</label>
+        <input type="checkbox" id="include_lowercase" name="include_lowercase" ><br>
+        <label for="include_digits">Include Digits:</label>
+        <input type="checkbox" id="include_digits" name="include_digits"><br>
+        <label for="include_special_chars">Include Special Characters:</label>
+        <input type="checkbox" id="include_special_chars" name="include_special_chars"><br><br>
+    </div>
+        <input class="btn1" type="submit" value="Generate Password">
+    </form>
+
+
+<div class="password">
+    <form action="/check_password" method="post">
+
+    <h3><u>Password Strength Result</u></h3> 
+    <br>
+    <p>Entered Password:<b> {{ password }}</b></p> 
+    <br>
+    <p>Password Strength:<b> {{ strength }}</b></p>
+
+    </form>
+</div>
+</section>
+</body>
+</html>
